@@ -93,6 +93,7 @@ export const JobPreview = () => {
             <li className="text-sm">yearly bonus</li>
           </ul>
         </div>
+        <Separator className="h-[2px] my-4" />
         <div>
           <CompanyDetails />
         </div>
