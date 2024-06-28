@@ -4,8 +4,8 @@ import { JobPreview } from "@/components/job-preview";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between ">
-      <Tabs defaultValue="jobs" className="w-full">
+    <main className="flex min-h-screen flex-col items-center justify-between">
+      <Tabs defaultValue="jobs" className="w-full my-4 ml-24">
         <TabsList className="">
           <TabsTrigger value="jobs">Job preview</TabsTrigger>
           <TabsTrigger value="applicants">Applicants</TabsTrigger>
