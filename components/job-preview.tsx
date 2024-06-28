@@ -45,7 +45,7 @@ export const JobPreview = () => {
           </div>
         </div>
         <Separator className="h-[2px] " />
-        <div className="flex gap-12 my-4">
+        <div className="flex gap-8 my-4">
           <div className="flex flex-col space-y-2">
             <p className="text-xs text-neutral-400 ">Skills Required</p>
             <div className="space-y-2">
@@ -57,15 +57,15 @@ export const JobPreview = () => {
           </div>{" "}
           <div className="space-y-2">
             <p className="text-xs text-neutral-400">Preferred Language</p>
-            <p>English</p>
+            <p className="text-sm font-semibold">English</p>
           </div>{" "}
           <div className="space-y-2">
             <p className="text-xs text-neutral-400">Type</p>
-            <p>Full time</p>
+            <p className="text-sm font-semibold">Full time</p>
           </div>{" "}
           <div className="space-y-2">
             <p className="text-xs text-neutral-400">Years of Experience</p>
-            <p>3+ Years of Experience</p>
+            <p className="text-sm font-semibold">3+ Years of Experience</p>
           </div>{" "}
         </div>
         <Separator className="h-[2px] " />
