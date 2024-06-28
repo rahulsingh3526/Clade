@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "./ui/button";
+import { CompanyDetails } from "./company-details";
 
 export const JobPreview = () => {
   return (
@@ -60,6 +61,9 @@ export const JobPreview = () => {
             <li>Performance bonus</li>
             <li>yearly bonus</li>
           </ul>
+        </div>
+        <div>
+          <CompanyDetails />
         </div>
       </div>
       <div className="w-1/4 ">

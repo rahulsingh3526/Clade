@@ -7,17 +7,18 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import jobs from "../public/icons/Icon (2).png";
+import messages from "../public/icons/Icon (3).png";
+import payments from "../public/icons/Icon (4).png";
+import { BellDot } from "lucide-react";
 
 import {
   Menubar,
-  MenubarCheckboxItem,
   MenubarContent,
   MenubarItem,
   MenubarMenu,
-  MenubarRadioGroup,
-  MenubarRadioItem,
   MenubarSeparator,
   MenubarShortcut,
   MenubarSub,
@@ -26,25 +27,22 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 
+import atlassian from "../public/icons/Rectangle 43.png";
+
 export const Navbar = () => {
   return (
-    <div className="flex justify-around">
+    <div className="flex justify-between items-center py-2 px-8">
       <div>
-        <Button variant="default">Button</Button>
+        <Button variant="link">Logo</Button>
       </div>
       <div>
-        <Menubar>
+        <Menubar className="rounded-full">
           <MenubarMenu>
-            <MenubarTrigger>File</MenubarTrigger>
+            <MenubarTrigger className="rounded-full text-neutral-400 gap-x-1">
+              <Image src={jobs} alt="job image" height="16" width="16" />
+              <p> Jobs</p>
+            </MenubarTrigger>
             <MenubarContent>
-              <MenubarItem>
-                New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-              </MenubarItem>
-              <MenubarItem>
-                New Window <MenubarShortcut>⌘N</MenubarShortcut>
-              </MenubarItem>
-              <MenubarItem disabled>New Incognito Window</MenubarItem>
-              <MenubarSeparator />
               <MenubarSub>
                 <MenubarSubTrigger>Share</MenubarSubTrigger>
                 <MenubarSubContent>
@@ -60,7 +58,11 @@ export const Navbar = () => {
             </MenubarContent>
           </MenubarMenu>
           <MenubarMenu>
-            <MenubarTrigger>Edit</MenubarTrigger>
+            <MenubarTrigger className="rounded-full text-neutral-400 gap-x-1">
+              <Image src={messages} alt="job image" height="16" width="16" />
+
+              <p>Messages</p>
+            </MenubarTrigger>
             <MenubarContent>
               <MenubarItem>
                 Undo <MenubarShortcut>⌘Z</MenubarShortcut>
@@ -68,70 +70,35 @@ export const Navbar = () => {
               <MenubarItem>
                 Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
               </MenubarItem>
-              <MenubarSeparator />
-              <MenubarSub>
-                <MenubarSubTrigger>Find</MenubarSubTrigger>
-                <MenubarSubContent>
-                  <MenubarItem>Search the web</MenubarItem>
-                  <MenubarSeparator />
-                  <MenubarItem>Find...</MenubarItem>
-                  <MenubarItem>Find Next</MenubarItem>
-                  <MenubarItem>Find Previous</MenubarItem>
-                </MenubarSubContent>
-              </MenubarSub>
-              <MenubarSeparator />
-              <MenubarItem>Cut</MenubarItem>
-              <MenubarItem>Copy</MenubarItem>
-              <MenubarItem>Paste</MenubarItem>
             </MenubarContent>
           </MenubarMenu>
           <MenubarMenu>
-            <MenubarTrigger>View</MenubarTrigger>
+            <MenubarTrigger className="rounded-full text-neutral-400 gap-x-1">
+              <Image src={payments} alt="job image" height="16" width="16" />
+
+              <p> Payments</p>
+            </MenubarTrigger>
             <MenubarContent>
-              <MenubarCheckboxItem>
-                Always Show Bookmarks Bar
-              </MenubarCheckboxItem>
-              <MenubarCheckboxItem checked>
-                Always Show Full URLs
-              </MenubarCheckboxItem>
-              <MenubarSeparator />
               <MenubarItem inset>
                 Reload <MenubarShortcut>⌘R</MenubarShortcut>
               </MenubarItem>
               <MenubarItem disabled inset>
                 Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
               </MenubarItem>
-              <MenubarSeparator />
-              <MenubarItem inset>Toggle Fullscreen</MenubarItem>
-              <MenubarSeparator />
-              <MenubarItem inset>Hide Sidebar</MenubarItem>
-            </MenubarContent>
-          </MenubarMenu>
-          <MenubarMenu>
-            <MenubarTrigger>Profiles</MenubarTrigger>
-            <MenubarContent>
-              <MenubarRadioGroup value="benoit">
-                <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
-                <MenubarRadioItem value="benoit">Benoit</MenubarRadioItem>
-                <MenubarRadioItem value="Luis">Luis</MenubarRadioItem>
-              </MenubarRadioGroup>
-              <MenubarSeparator />
-              <MenubarItem inset>Edit...</MenubarItem>
-              <MenubarSeparator />
-              <MenubarItem inset>Add Profile...</MenubarItem>
             </MenubarContent>
           </MenubarMenu>
         </Menubar>
       </div>
       <div>
         <Select>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Theme" />
+          <SelectTrigger className="border-none gap-x-2">
+            <BellDot />
+            <Image src={atlassian} alt="profile" className="rounded-full " />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="light">Light</SelectItem>
-            <SelectItem value="dark">Dark</SelectItem>
-            <SelectItem value="system">System</SelectItem>
+            <SelectItem value="light">Profile</SelectItem>
+            <SelectItem value="dark">Account</SelectItem>
+            <SelectItem value="system">Details</SelectItem>
           </SelectContent>
         </Select>
       </div>

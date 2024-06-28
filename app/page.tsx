@@ -15,9 +15,9 @@ export default function Home() {
         <TabsContent value="jobs">
           <JobPreview />
         </TabsContent>
-        <TabsContent value="applicants">Applicants</TabsContent>
-        <TabsContent value="match">Match</TabsContent>
-        <TabsContent value="messages">Messages</TabsContent>
+        <TabsContent value="applicants">Your Applicants Data</TabsContent>
+        <TabsContent value="match">Your Match Data</TabsContent>
+        <TabsContent value="messages">Your Messages data</TabsContent>
       </Tabs>
     </main>
   );
