@@ -40,7 +40,7 @@ import atlassian from "../public/icons/Rectangle 43.png";
 
 export const Navbar = () => {
   return (
-    <div className="flex justify-between items-center py-2 px-1 md:px-8 ">
+    <div className="flex justify-between items-center py-2 px-1 md:px-8 shadow-md ">
       <div>
         <Button variant="link">Logo</Button>
       </div>
