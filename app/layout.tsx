@@ -18,7 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
+        <div className="fixed w-full top-0 backdrop-blur-sm bg-white/30">
+          {" "}
+          <Navbar />
+        </div>
         {children}
       </body>
     </html>
