@@ -28,7 +28,7 @@ export const JobPreview = () => {
         <div className="flex flex-col  space-y-3 pb-4 ">
           <div className="flex flex-col items-center md:flex-row md:justify-start  md:items-center md:gap-x-3 gap-y-1">
             <LetterPullup
-              className="text-2xl font-bold"
+              className="text-2xl font-bold z-10"
               words="Senior Product Designer"
             />
 
