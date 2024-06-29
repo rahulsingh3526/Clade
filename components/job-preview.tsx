@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "./ui/button";
+import { SquareMousePointer } from "lucide-react";
 import { CompanyDetails } from "./company-details";
 import badge from "../public/icons/Badge.png";
 import Image from "next/image";
@@ -15,37 +16,42 @@ import users from "../public/icons/users-01.png";
 import usercheck from "../public/icons/user-check-01.png";
 import messages from "../public/icons/message-square-01.png";
 import eye from "../public/icons/eye.png";
+import LetterPullup from "./magicui/letter-pullup";
+
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sidebar } from "./sidebar";
 
 export const JobPreview = () => {
   return (
     <div className="flex w-full min-h-screen">
-      <div className="w-3/4 ">
-        <div className="flex flex-col gap-y-4 max-w-[623px] mb-4">
-          <div className="flex justify-start items-center gap-x-3">
-            {" "}
-            <p className="text-2xl font-bold">Senior Product Designer</p>
+      <div className="w-full lg:w-3/4 ">
+        <div className="flex flex-col  space-y-3 pb-4 ">
+          <div className="flex flex-col items-center md:flex-row md:justify-start  md:items-center md:gap-x-3 gap-y-1">
+            <LetterPullup
+              className="text-2xl font-bold"
+              words="Senior Product Designer"
+            />
+
             <p className="text-sm text-neutral-400">posted 4 days ago</p>
-            <Image src={badge} alt="status" />
-          </div>
-          <div className="flex gap-x-8">
-            <div className="flex justify-center items-center gap-x-3">
-              {" "}
-              <span>
-                <Image src={location} alt="location" width={16} height={16} />
-              </span>
-              <p>Delaware</p>
+            <div className="flex flex-wrap gap-3 md:gap-0">
+              <div className="md:w-auto flex items-center gap-x-3">
+                <Image src={badge} alt="status" width={80} height={40} />
+              </div>
             </div>
-            <div className="flex justify-center items-center gap-x-3">
-              {" "}
-              <span>
-                <Image src={salary} alt="location" width={16} height={16} />
-              </span>
-              <p>300K -400k</p>
+          </div>
+          <div className="flex gap-x-8 justify-center md:justify-start items-center">
+            <div className="flex justify-start items-center gap-x-3">
+              <Image src={location} alt="location" width={16} height={16} />
+              <p className="text-sm text-neutral-400">Delaware</p>
+            </div>
+            <div className="flex justify-start items-center gap-x-3">
+              <Image src={salary} alt="location" width={16} height={16} />
+              <p className="text-sm text-neutral-400">$300K - $400k</p>
             </div>
           </div>
         </div>
         <Separator className="h-[2px] " />
-        <div className="flex gap-8 my-4">
+        <div className="flex  justify-center md:justify-start gap-8 my-4">
           <div className="flex flex-col space-y-2">
             <p className="text-xs text-neutral-400 ">Skills Required</p>
             <div className="space-y-2">
@@ -55,18 +61,20 @@ export const JobPreview = () => {
               <Image src={figma} alt="figma" />
             </div>
           </div>{" "}
-          <div className="space-y-2">
-            <p className="text-xs text-neutral-400">Preferred Language</p>
-            <p className="text-sm font-semibold">English</p>
-          </div>{" "}
-          <div className="space-y-2">
-            <p className="text-xs text-neutral-400">Type</p>
-            <p className="text-sm font-semibold">Full time</p>
-          </div>{" "}
-          <div className="space-y-2">
-            <p className="text-xs text-neutral-400">Years of Experience</p>
-            <p className="text-sm font-semibold">3+ Years of Experience</p>
-          </div>{" "}
+          <div className="flex flex-col md:flex-row gap-x-8">
+            <div className="space-y-2">
+              <p className="text-xs text-neutral-400">Preferred Language</p>
+              <p className="text-sm font-semibold">English</p>
+            </div>{" "}
+            <div className="space-y-2">
+              <p className="text-xs text-neutral-400">Type</p>
+              <p className="text-sm font-semibold">Full time</p>
+            </div>{" "}
+            <div className="space-y-2">
+              <p className="text-xs text-neutral-400">Years of Experience</p>
+              <p className="text-sm font-semibold">3+ Years of Experience</p>
+            </div>{" "}
+          </div>
         </div>
         <Separator className="h-[2px] " />
         <div className="my-3">
@@ -105,7 +113,20 @@ export const JobPreview = () => {
         </div>
       </div>
 
-      <div className="w-1/4 bg-neutral-100 ">
+      <Sheet>
+        <SheetTrigger className=" md:hidden fixed right-0 top-[30%]">
+          <SquareMousePointer
+            size={50}
+            color="white"
+            className="bg-orange-500 m-2 rounded-sm p-2"
+          />
+        </SheetTrigger>
+        <SheetContent>
+          <Sidebar />
+        </SheetContent>
+      </Sheet>
+
+      <div className=" hidden xl:block w-1/4 bg-neutral-100 ">
         <div className="flex justify-center items-center space-x-4">
           {" "}
           <Button
